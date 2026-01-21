@@ -61,7 +61,18 @@ export default async function Home() {
                             margin: '0 auto 2.5rem',
                             lineHeight: 1.6
                         }}>
-                            Casas e apartamentos para venda e locação nas melhores localizações. Attendimento personalizado via WhatsApp.
+                            Especializado em imóveis residenciais e comerciais
+                        </p>
+
+                        <p style={{
+                            fontSize: '1.25rem',
+                            color: 'var(--secondary)',
+                            marginBottom: '2.5rem',
+                            maxWidth: '600px',
+                            margin: '0 auto 2.5rem',
+                            lineHeight: 1.6
+                        }}>
+                            Casas e apartamentos para venda e locação nas melhores localizações. Atendimento personalizado via WhatsApp.
                         </p>
 
                         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>

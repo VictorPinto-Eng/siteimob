@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-export const metadata: Metadata = {
-    title: 'Site Imobiliária',
-    description: 'Encontre seu imóvel ideal',
+export const metadata = {
+    title: 'HV5 Soluções Imobiliárias',
+    description: 'Encontre o imóvel dos seus sonhos',
 }
 
 export default function RootLayout({
