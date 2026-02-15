@@ -57,7 +57,7 @@ export default function ContactPage() {
                                 <p style={{ fontSize: '1.1rem', fontWeight: 500 }}>(81) 99952-9391</p>
                             </div>
 
-                            <p style={{ marginBottom: '2rem' }}>Hv5solucoesimobiliarias@gmail.com</p>
+                            <p style={{ marginBottom: '2rem' }}>hv5solucoesimobiliarias@gmail.com</p>
 
                             <a href={getWhatsappLink('Vim pelo site, desejo efetuar contato para esclarecimento', true)} target="_blank" className="btn" style={{
                                 backgroundColor: '#25D366',

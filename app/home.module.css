@@ -1,0 +1,174 @@
+/* Hero Section */
+.hero {
+  padding: 6rem 0;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+}
+
+.heroContent {
+  /* Container styles handled by global .container */
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.buttonLink {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+}
+
+.whatsappButton {
+  background-color: white;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+}
+
+/* Benefits Section */
+.benefitsSection {
+  padding: 4rem 0;
+  background: white;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.benefitCard {
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.benefitIcon {
+  width: 3rem;
+  height: 3rem;
+  background: #ecfdf5;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--primary);
+}
+
+.benefitTitle {
+  margin-bottom: 0.5rem;
+}
+
+.benefitText {
+  color: var(--secondary);
+}
+
+/* Featured Section */
+.featuredSection {
+  padding: 6rem 0;
+}
+
+.featuredHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.featuredTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.featuredSubtitle {
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.viewAllButton {
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttonLink,
+  .whatsappButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .featuredHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .featuredTitle {
+    font-size: 2rem;
+  }
+}

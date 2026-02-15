@@ -1,0 +1,236 @@
+.header {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    font-family: var(--font-menu);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    position: relative;
+    z-index: 51;
+    /* Keep header content above backdrop */
+    background-color: white;
+    /* Ensure header background covers backdrop */
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logoTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    /* Increased from 1.125rem to be closer to original 1.75rem while fitting 2 lines */
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: -0.025em;
+}
+
+.logoImage {
+    object-fit: contain;
+}
+
+.desktopNav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navLink {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #334155;
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--primary);
+}
+
+.actions {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loginLink {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #334155;
+    transition: color 0.2s;
+}
+
+.loginLink:hover {
+    color: var(--primary);
+}
+
+
+.loginButtonPill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background-color: #f1f5f9;
+    color: var(--primary);
+    /* Green text */
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.loginButtonPill:hover {
+    background-color: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+.menuButton {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #334155;
+    padding: 0.5rem;
+}
+
+/* Mobile Menu Dropdown */
+.mobileMenu {
+    position: fixed;
+    top: 5rem;
+    /* Height of the header */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 49;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobileMenu.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobileMenuHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    height: 5rem;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #334155;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.mobileNavLink {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #334155;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.mobileNavLink:last-of-type {
+    border-bottom: none;
+}
+
+.mobileLoginContainer {
+    margin-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.5rem;
+}
+
+.mobileLoginText {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.mobileCta {
+    width: 100%;
+    text-align: center;
+    border-radius: 9999px;
+    /* Pill shape for mobile too */
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .desktopNav {
+        display: flex;
+    }
+
+    .desktopActions {
+        display: flex;
+    }
+
+    .menuButton {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: none;
+    }
+}
