@@ -2,7 +2,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { getImovelById, Imovel } from '@/lib/imoveis'
-import { getWhatsappLink } from '@/lib/whatsapp'
+import WhatsAppLink from '@/components/WhatsAppLink'
 import { notFound } from 'next/navigation'
 import ImageGallery from '@/components/ImageGallery'
 
@@ -25,7 +25,7 @@ export default async function ImovelDetail({ params }: { params: Promise<{ id: s
         ? {} // Should have been parsed in getImovelById helper, but typing allows string
         : imovel.custom_fields || {}
 
-    const whatsappLink = getWhatsappLink(imovel.nome)
+
 
     let tags: string[] = []
     try {
@@ -110,15 +110,13 @@ export default async function ImovelDetail({ params }: { params: Promise<{ id: s
                                 </div>
                             </div>
 
-                            <a
-                                href={whatsappLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <WhatsAppLink
+                                messageOrImovel={imovel.nome}
                                 className="btn btn-whatsaapp"
                                 style={{ width: '100%', fontSize: '1.1rem', padding: '1rem' }}
                             >
                                 Falar no WhatsApp sobre este imóvel
-                            </a>
+                            </WhatsAppLink>
                         </div>
                     </div>
                 </div>

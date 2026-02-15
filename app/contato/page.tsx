@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { getWhatsappLink } from '@/lib/whatsapp'
+import WhatsAppLink from '@/components/WhatsAppLink'
 
 export default function ContactPage() {
     return (
@@ -59,14 +59,21 @@ export default function ContactPage() {
 
                             <p style={{ marginBottom: '2rem' }}>hv5solucoesimobiliarias@gmail.com</p>
 
-                            <a href={getWhatsappLink('Vim pelo site, desejo efetuar contato para esclarecimento', true)} target="_blank" className="btn" style={{
-                                backgroundColor: '#25D366',
-                                color: 'white',
-                                border: 'none',
-                                textAlign: 'center'
-                            }}>
+                            <WhatsAppLink
+                                messageOrImovel="Vim pelo site, desejo efetuar contato para esclarecimento"
+                                isFullMessage={true}
+                                className="btn"
+                                style={{
+                                    backgroundColor: '#25D366',
+                                    color: 'white',
+                                    border: 'none',
+                                    textAlign: 'center',
+                                    display: 'block',
+                                    width: '100%'
+                                }}
+                            >
                                 Falar no WhatsApp
-                            </a>
+                            </WhatsAppLink>
                         </div>
                     </div>
                 </div>

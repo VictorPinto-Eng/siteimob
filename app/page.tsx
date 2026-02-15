@@ -2,7 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ImovelCard from '@/components/ImovelCard'
 import { getFeaturedImoveis } from '@/lib/imoveis'
-import { getWhatsappLink } from '@/lib/whatsapp'
+import WhatsAppLink from '../components/WhatsAppLink'
 import Link from 'next/link'
 import styles from './home.module.css'
 
@@ -53,14 +53,13 @@ export default async function Home() {
                                 Ver todos os imóveis &rarr;
                             </Link>
 
-                            <a
-                                href={getWhatsappLink('Atendimento Geral')}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <WhatsAppLink
+                                messageOrImovel="Atendimento Geral"
                                 className={`btn ${styles.whatsappButton}`}
                             >
                                 Falar no WhatsApp
-                            </a>
+                            </WhatsAppLink>
+
                         </div>
                     </div>
                 </section>
