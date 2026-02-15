@@ -35,6 +35,8 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 5rem;
+  /* Compensate for fixed header height */
 }
 
 h1,

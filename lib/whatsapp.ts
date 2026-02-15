@@ -4,5 +4,5 @@ export function getWhatsappLink(messageOrImovel: string, isFullMessage: boolean 
     const phone =
         process.env.NEXT_PUBLIC_WHATSAPP_PHONE || DEFAULT_WHATSAPP_PHONE
     const text = isFullMessage ? messageOrImovel : `Vim pelo site, quero o imóvel ${messageOrImovel}`
-    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}&type=phone_number&app_absent=0`
+    return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
 }
