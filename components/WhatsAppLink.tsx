@@ -8,8 +8,17 @@ function sanitizePhone(phone: string) {
     return (phone || '').replace(/\D/g, '')
 }
 
-function isMobile() {
-    return /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(navigator.userAgent)
+function isMobileUA(ua: string) {
+    return /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i.test(ua)
+}
+
+type Props = {
+    messageOrImovel: string
+    isFullMessage?: boolean
+    className?: string
+    style?: React.CSSProperties
+    title?: string
+    children: React.ReactNode
 }
 
 export default function WhatsAppLink({
@@ -17,14 +26,9 @@ export default function WhatsAppLink({
     isFullMessage = false,
     className,
     style,
+    title,
     children,
-}: {
-    messageOrImovel: string
-    isFullMessage?: boolean
-    className?: string
-    style?: React.CSSProperties
-    children: React.ReactNode
-}) {
+}: Props) {
     const phone = sanitizePhone(process.env.NEXT_PUBLIC_WHATSAPP_PHONE || DEFAULT_WHATSAPP_PHONE)
 
     const text = isFullMessage
@@ -33,16 +37,30 @@ export default function WhatsAppLink({
 
     const encoded = encodeURIComponent(text)
 
-    // Mobile: mais direto
-    const mobileUrl = `https://wa.me/${phone}?text=${encoded}`
-
-    // Desktop: tela intermediária com opção Web
+    // SSR-safe default (desktop/intermediária)
     const desktopUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`
 
-    const href = isMobile() ? mobileUrl : desktopUrl
+    // Mobile (mais direto)
+    const mobileUrl = `https://wa.me/${phone}?text=${encoded}`
+
+    const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        const ua = typeof navigator !== 'undefined' ? navigator.userAgent : ''
+        if (isMobileUA(ua)) {
+            e.preventDefault()
+            window.open(mobileUrl, '_blank', 'noopener,noreferrer')
+        }
+    }
 
     return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className={className} style={style}>
+        <a
+            href={desktopUrl}
+            onClick={onClick}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={className}
+            style={style}
+            title={title}
+        >
             {children}
         </a>
     )

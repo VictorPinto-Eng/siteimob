@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppLink from '@/components/WhatsAppLink'
+import WhatsAppLink from '../../components/WhatsAppLink'
+
 
 export default function ContactPage() {
     return (
